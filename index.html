@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B3B36">
+<meta name="description" content="Live money remittance transfer rates from Saudi Arabia to India — compare Enjaz, STC Pay, Alinma, D360, Tiqmo and more.">
+<title>Rates from Saudi Arabia to India</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true">
+  <span class="coin coin-1">﷼</span>
+  <span class="coin coin-2">₹</span>
+  <span class="coin coin-3">﷼</span>
+  <span class="coin coin-4">₹</span>
+  <span class="coin coin-5">﷼</span>
+  <span class="coin coin-6">₹</span>
+</div>
+
+<header class="page-header">
+  <div class="brand-mark">💱 <span>AhadTech Rates</span></div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="flag-line">🇸🇦 Saudi Arabia <span class="arrow">→</span> 🇮🇳 India</p>
+    <h1>Rates from Saudi Arabia to <span class="accent">INDIA</span></h1>
+    <p class="disclaimer">Rates shown here are provided by users. Correctness is not guaranteed.</p>
+
+    <div class="live-rate-card">
+      <span class="live-dot" aria-hidden="true"></span>
+      <span class="live-label">Live rate:</span>
+      <span class="live-value" id="liveRateValue">—</span>
+      <span class="live-sub">best rate right now</span>
+    </div>
+
+    <p class="sync-note" id="syncNote">Syncing with live rate sheet&hellip;</p>
+  </section>
+
+  <section class="table-section">
+    <div class="table-card">
+      <div class="table-head-row">
+        <span class="col col-rank">#</span>
+        <span class="col col-name">Remittance Center</span>
+        <span class="col col-updated">Updated</span>
+        <span class="col col-rate">Rate (₹ per ﷼)</span>
+        <span class="col col-action">&nbsp;</span>
+      </div>
+
+      <div id="ratesList" class="rates-list">
+        <!-- Rows injected by script.js -->
+        <div class="loading-row" id="loadingRow">
+          <span class="spinner" aria-hidden="true"></span>
+          Loading current rates&hellip;
+        </div>
+      </div>
+
+      <p class="empty-state" id="emptyState" hidden>No rates available right now. Please check back shortly.</p>
+    </div>
+
+    <p class="refresh-note" id="refreshNote"></p>
+  </section>
+
+</main>
+
+<footer class="page-footer">
+  <p>Rates are community-sourced and for reference only — always confirm the final rate directly with the remittance provider before transferring.</p>
+</footer>
+
+<!-- Rate submission modal -->
+<div class="modal-overlay" id="modalOverlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <p class="modal-title" id="modalTitle">
+      Please provide the current exchange rate in <span id="modalCenterName">&mdash;</span>
+    </p>
+    <label class="modal-label" for="modalRateInput">Rate (₹ per ﷼)</label>
+    <input type="text" id="modalRateInput" class="modal-input" placeholder="e.g. 22.15" inputmode="decimal" autocomplete="off">
+    <p class="modal-error" id="modalError" hidden>Please enter a valid number (digits and a decimal point only).</p>
+    <div class="modal-actions">
+      <button class="btn btn-cancel" id="modalCancel">Cancel</button>
+      <button class="btn btn-submit" id="modalSubmit">Submit</button>
+    </div>
+    <p class="modal-status" id="modalStatus" role="status" aria-live="polite"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
